@@ -1,0 +1,150 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://cena_personagem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://imagens/Background4.jpg" type="Texture" id=2]
+[ext_resource path="res://imagens/Barricada.png" type="Texture" id=3]
+[ext_resource path="res://fonts/cs_regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://imagens/Piloto.png" type="Texture" id=5]
+[ext_resource path="res://imagens/Vida.png" type="Texture" id=6]
+[ext_resource path="res://imagens/Especial.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 533, 48.5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 15
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0156863, 0.815686, 0.00784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.364706, 0.32549, 0.309804, 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 40
+font_data = ExtResource( 4 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 513, 305 )
+scale = Vector2( 1.02019, 1.08388 )
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Node2D" parent="Area2D" instance=ExtResource( 1 )]
+position = Vector2( 488, 434 )
+
+[node name="Carga" type="Sprite" parent="Area2D"]
+position = Vector2( 109, 643 )
+scale = Vector2( 0.510499, 0.503795 )
+texture = ExtResource( 3 )
+
+[node name="Carga2" type="Sprite" parent="Area2D"]
+position = Vector2( 295, 622 )
+scale = Vector2( 0.490362, 0.425646 )
+texture = ExtResource( 3 )
+
+[node name="Carga3" type="Sprite" parent="Area2D"]
+position = Vector2( 491, 627 )
+scale = Vector2( 0.531847, 0.450698 )
+texture = ExtResource( 3 )
+
+[node name="Carga4" type="Sprite" parent="Area2D"]
+position = Vector2( 712, 632 )
+scale = Vector2( 0.531847, 0.450698 )
+texture = ExtResource( 3 )
+
+[node name="Carga5" type="Sprite" parent="Area2D"]
+position = Vector2( 894, 630 )
+scale = Vector2( 0.531847, 0.450698 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 509, 560.5 )
+shape = SubResource( 1 )
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = 6.0
+margin_top = 487.0
+margin_right = 127.0
+margin_bottom = 506.0
+custom_fonts/font = SubResource( 4 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+max_value = 5.0
+step = 1.0
+value = 5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Piloto" type="Sprite" parent="."]
+position = Vector2( 111, 62 )
+scale = Vector2( 0.305073, 0.270222 )
+texture = ExtResource( 5 )
+
+[node name="Vida1" type="Sprite" parent="."]
+position = Vector2( 32, 106 )
+scale = Vector2( 0.061003, 0.061003 )
+texture = ExtResource( 6 )
+
+[node name="Vida2" type="Sprite" parent="."]
+position = Vector2( 73, 107 )
+scale = Vector2( 0.0559783, 0.0583832 )
+texture = ExtResource( 6 )
+
+[node name="Vida3" type="Sprite" parent="."]
+position = Vector2( 115, 108 )
+scale = Vector2( 0.0586957, 0.0614371 )
+texture = ExtResource( 6 )
+
+[node name="Especial" type="Sprite" parent="."]
+position = Vector2( 35, 148 )
+scale = Vector2( 0.0623177, 0.0615366 )
+texture = ExtResource( 7 )
+
+[node name="Quantidade" type="Label" parent="."]
+margin_left = 59.0
+margin_top = 135.0
+margin_right = 145.0
+margin_bottom = 161.0
+custom_fonts/font = SubResource( 5 )
+text = " = 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tempo" type="Label" parent="."]
+margin_left = 159.0
+margin_top = 12.0
+margin_right = 369.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 6 )
+text = "00:00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pontuação" type="Label" parent="."]
+margin_left = 725.0
+margin_top = 10.0
+margin_right = 989.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 7 )
+text = "Pontos: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}

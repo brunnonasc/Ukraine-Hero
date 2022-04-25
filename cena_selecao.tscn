@@ -1,0 +1,119 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://fonts/cs_regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://imagens/Nave3.png" type="Texture" id=2]
+[ext_resource path="res://imagens/Nave1.png" type="Texture" id=3]
+[ext_resource path="res://imagens/Nave2.png" type="Texture" id=4]
+[ext_resource path="res://Inicio2.jpg" type="Texture" id=5]
+[ext_resource path="res://fonts/METAG___.TTF" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.443137, 0.509804, 0.85098, 0.52549 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+outline_color = Color( 0.65098, 0.709804, 0.109804, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "piscar"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.623529, 0.752941, 0.823529, 0.0588235 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 509, 294 )
+scale = Vector2( 0.483118, 0.536379 )
+texture = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 286.0
+margin_top = 197.0
+margin_right = 732.0
+margin_bottom = 500.0
+color = Color( 0, 0, 0.00784314, 0.694118 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 8.0
+margin_top = 4.0
+margin_right = 434.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+text = "			
+					       - SELECT YOUR SHIP -"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nave1" type="Sprite" parent="."]
+
+[node name="Nave" type="Sprite" parent="Nave1"]
+position = Vector2( 357, 338 )
+scale = Vector2( 0.252515, 0.252515 )
+texture = ExtResource( 3 )
+
+[node name="Nave2" type="Sprite" parent="."]
+
+[node name="Nave2" type="Sprite" parent="Nave2"]
+position = Vector2( 503, 340 )
+scale = Vector2( 0.151111, 0.181224 )
+texture = ExtResource( 4 )
+
+[node name="Nave3" type="Sprite" parent="."]
+
+[node name="Nave3" type="Sprite" parent="Nave3"]
+position = Vector2( 657, 338 )
+scale = Vector2( 0.254989, 0.261641 )
+texture = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 345.0
+margin_top = 414.0
+margin_right = 669.0
+margin_bottom = 486.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "
+   <<<PRESS ENTER>>>"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "piscar"
+anims/RESET = SubResource( 5 )
+anims/piscar = SubResource( 4 )
