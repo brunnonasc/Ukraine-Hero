@@ -1,2 +1,2 @@
 # Ukraine-Hero
-Jogo em desenvolvimento na Godot Engine 
+ - Jogo em desenvolvimento na Godot Engine 
