@@ -1,2 +1,2 @@
-#    Ukraine Hero :video_game:
- - Repositório do game em desenvolvimento usando a GODOT ENGINE. 
+# Ukraine-Hero :video_game:
+  - Este repositório contém o projeto do jogo de avião "**Hero Ukraine**" em desenvolvimento usando a engine GODOT. 
